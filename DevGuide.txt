@@ -1,0 +1,124 @@
+-----------------------------------------------------------------------------------------
+Overview
+-----------------------------------------------------------------------------------------
+
+Funktionen:
+- addieren, subtrahieren, multiplizieren, dividieren
+- potenzieren, Klammern, Wurzel, Fakultät, Logarythmus
+- Summen, Integrale
+- Brüche
+- Konstanten: e, pi
+- Tasten: Delete, Clear, previous answer, Undo, Redo
+- belegbare Variablen
+- Cursor bewegbar mit Pfeiltasten
+- Eingabe auch über Keyboard
+
+Setup:
+- degree or radian
+
+Modes:
+- normal
+- (gleichung lösen)
+- f(x) -> Wertetabelle (+ Graph)
+- Ableiten/Differenzieren
+
+Display:
+- Kommadarstellung: "."
+- Ganze Rechnung wird eingegeben (also nicht wie beim windows calc)
+
+
+
+-----------------------------------------------------------------------------------------
+Idee
+-----------------------------------------------------------------------------------------
+
+Eingabe:
+Die Eingabe im normalen Modus wird als String gespeichert, welchen das virtuelle Display
+interpretiert.
+Bei Drücken der "="-Taste wird der String aufgetrennt, die einzelnen Operationen werden
+durchgeführt und zu einem gesammten Ergebnis zusammengefügt. 
+In Modi mit mehreren Eingaben funktioniert die "="-Taste auch als eine "weiter"-Taste.
+
+Modi:
+Der Taschenrechner befindet sich immer in einem Modus. Je nachdem, in welchem Modus er
+sich befindet, hat die "="-Taste eine bestimmte Aufgabe. Unterschiedliche Modi können
+auch unterschiedlich viele und andere Eingaben
+
+Display:
+Das Display interpretiert die als String gespeicherte Eingabe.
+Jedes Drücken einer Taste ruft eine Update-Funktion des virtuellen Displays auf.
+Es gibt Menü-Screens und Operating-Screens. Der normale Modus hat genau einen
+Operating-Screen, andere Modi können auch mehrere haben.
+
+
+
+-----------------------------------------------------------------------------------------
+Program Structure
+-----------------------------------------------------------------------------------------
+class Calculation
+	parameters
+	methods
+
+abstract class Mode
+	parameters
+		calc: Calculator
+			Reference für Calculator-Objekt
+	methods
+		abstract input(button)
+			Nimmt Taste an
+			Verarbeitet die Funktion der Taste
+		abstract solve()
+			Löst die modusspezifische Aufgabe
+
+class ComputationMode extends Mode
+
+class TableMode extends Mode
+
+class DifferentiationMode extends Mode
+
+class EquationMode extends Mode
+
+class Button
+	parameters
+		calc: Calculator
+			Reference für Calculator-Objekt
+		type: string
+		value: string
+	methods
+		onClick(self)
+			Ruft calc.buttonPressed(self) auf
+
+class Calculator
+	parameters
+		mode: Mode
+			Objekt mit dem Typ Modus
+			Standartgemäß normaler Modus
+		inputstring: string
+			String der die Eingabe enthält
+		buttons: array: Button
+			Alle Tasten-Objekte sind hier gespeichert
+			Tasten-Objekte werden in der Constructor-Methode der Klasse Calculator
+				erstellt
+		modes: array: Mode
+			Um die Laufzeit zu verbessern, werden beim Erstellen des Taschenrechners
+				(constructor) die verschiedenen Modi direkt miterstellt. Sie werden hier
+				gesammelt gespeichert.
+		#display: Display
+			Referenz für das Display
+			Wird in der Constructor-Methode der Klasse Calculator erstellt
+	methods
+		buttonPressed(button)
+			Wenn button.type == modeselect -> setMode(button)
+			Ansonsten -> mode.input(button)
+			Ruft display.update() auf
+		setMode(button)
+			Ausgelöst durch Taste mit Typ modeselect
+			Ruft Methode setModeTo(newMode) auf
+		setModeTo(mode)
+			Setzt self.mode auf übergebenen Modus
+
+class Display
+	parameters
+	methods
+		update()
+			Visualisiert je nach Modus unterschiedliche Screens/Scenes
