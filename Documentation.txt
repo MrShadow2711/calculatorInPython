@@ -1,0 +1,87 @@
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+Dokumentation
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+Inhaltsverzeichnis
+-----------------------------------------------------------------------------------------
+
+Buttons
+
+
+
+-----------------------------------------------------------------------------------------
+Buttons
+-----------------------------------------------------------------------------------------
+
+Parameter:
+    - calculator
+    - id
+    - value
+    - type
+
+myButton = Button(calculator reference, id, value, type)
+
+ID: id  value   type        Beschreibung
+    0   "0"     "number"    Zahl 0
+    1   "1"     "number"    Zahl 1
+    2   "2"     "number"    Zahl 2
+    3   "3"     "number"    Zahl 3
+    4   "4"     "number"    Zahl 4
+    5   "5"     "number"    Zahl 5
+    6   "6"     "number"    Zahl 6
+    7   "7"     "number"    Zahl 7
+    8   "8"     "number"    Zahl 8
+    9   "9"     "number"    Zahl 9
+    10  "pi"    "number"    Zahl Pi
+    11  "e"     "number"    Eulersche Zahl
+    12  "a"     "variable"  Programmierbare Variable
+    13  "b"     "variable"  Programmierbare Variable
+    14  "c"     "variable"  Programmierbare Variable
+    15  "d"     "variable"  Programmierbare Variable
+    16
+    17
+    18  "("     "symbol"    Klammer auf
+    19  ")"     "symbol"    Klammer zu
+    20  "^"     "operator"  Potenz
+    21  "log"   "operator"  Logarythmus
+    22  "sqrt"  "operator"  Quadratwurzel
+    23  "root"  "operator"  Wurzel
+    24  "!"     "operator"  Fakultät
+    25  "sin"   "operator"  Sinus
+    26  "arcsin""operator"  Arcussinus
+    27  "cos"   "operator"  Cosinus
+    28  "arccos""operator"  Arkuskosinus
+    29  "tan"   "operator"  Tangens
+    30  "arctan""operator"  Arkustangens
+    31
+    32
+    33
+    34
+    35
+    36  "."     "decimal"   Dezimalpunkt
+    37  "ans"   "answer"    Vorheriges Ergebnis
+    38  "+"     "operator"  Plus
+    39  "-"     "operator"  Minus
+    40  "*"     "operator"  Mal
+    41  "/"     "operator"  Geteilt
+    42  "DEL"   "edit"      Delete
+    43  "CL"    "edit"      Clear
+    44  "undo"  "edit"      Undo
+    45  "redo"  "edit"      Redo
+    46  "up"    "navig"     Cursor Up
+    47  "down"  "navig"     Cursor Down
+    48  "left"  "navig"     Cursor Left
+    49  "right" "navig"     Cursor Right
+    50  "mode"  "modsel"    Modeselection
+    51  "setup" "modsel"    Setup
+    52
+    53
+    54
+    55
+
+Methoden:
+    onClick()
+        Damit wird der Button gedrückt
