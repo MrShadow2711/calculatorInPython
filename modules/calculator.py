@@ -7,6 +7,7 @@ from mode_modeselection import *
 from mode_setup import *
 from button import *
 from display import *
+from input import *
 
 class Calculator:
     def __init__(self):
@@ -14,6 +15,7 @@ class Calculator:
         self.buttons:list = self._createButtons()
         self.modes:dict = self._createModes()
         self.activeMode:Mode = self.modes["computation"]
+        Input.calculator = self
 
     def buttonPressed(self,button:Button):
         #print("button pressed")
@@ -51,7 +53,7 @@ class Calculator:
         arr.append(Button(self,7,"7","number"))
         arr.append(Button(self,8,"8","number"))
         arr.append(Button(self,9,"9","number"))
-        arr.append(Button(self,10,"pi","number"))
+        arr.append(Button(self,10,"π","number"))
         arr.append(Button(self,11,"e","number"))
         arr.append(Button(self,12,"a","variable"))
         arr.append(Button(self,13,"b","variable"))

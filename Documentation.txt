@@ -35,7 +35,7 @@ ID: id  value   type        Beschreibung
     7   "7"     "number"    Zahl 7
     8   "8"     "number"    Zahl 8
     9   "9"     "number"    Zahl 9
-    10  "pi"    "number"    Zahl Pi
+    10  "π"     "number"    Zahl Pi
     11  "e"     "number"    Eulersche Zahl
     12  "a"     "variable"  Programmierbare Variable
     13  "b"     "variable"  Programmierbare Variable
@@ -80,7 +80,7 @@ ID: id  value   type        Beschreibung
     52
     53
     54
-    55
+    55  "="     "equals"    Gleichzeichen
 
 Methoden:
     onClick()
