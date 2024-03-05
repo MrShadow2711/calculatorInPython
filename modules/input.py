@@ -13,7 +13,7 @@ class Input:
         Input._saveString()
         inputstring = Input.calculator.inputstring
 
-        Input.calculator.inputstring = inputstring[:Cursor.position] + inputstring[(Cursor.position + 1):]
+        Input.calculator.inputstring = inputstring[:Cursor.position - 1] + inputstring[(Cursor.position):]
         Cursor.moveLeft()
     
     def clear():
