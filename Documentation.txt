@@ -9,6 +9,7 @@ Inhaltsverzeichnis
 -----------------------------------------------------------------------------------------
 
 Buttons
+Modes
 
 
 
@@ -85,3 +86,12 @@ ID: id  value   type        Beschreibung
 Methoden:
     onClick()
         Damit wird der Button gedrückt
+
+
+
+-----------------------------------------------------------------------------------------
+Modes
+-----------------------------------------------------------------------------------------
+
+Alle Modi sind unter [ReferenceToCalculator].modes als Dictionary gespeichert. Sie werden
+in der Methode _createModes der Klasse Calculator erstellt. 

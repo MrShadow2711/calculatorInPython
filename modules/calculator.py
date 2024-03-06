@@ -37,7 +37,7 @@ class Calculator:
         
         print("Fehler: Modus konnte nicht bestimmt werden")
 
-    def setModeTo(self, mode):
+    def setModeTo(self, mode:str):
         self.activeMode = self.modes[mode]
 
     def _createButtons(self):
