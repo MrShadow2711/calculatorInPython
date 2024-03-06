@@ -10,6 +10,7 @@ Inhaltsverzeichnis
 
 Buttons
 Modes
+Setup
 
 
 
@@ -95,3 +96,25 @@ Modes
 
 Alle Modi sind unter [ReferenceToCalculator].modes als Dictionary gespeichert. Sie werden
 in der Methode _createModes der Klasse Calculator erstellt. 
+
+
+
+-----------------------------------------------------------------------------------------
+Setup
+-----------------------------------------------------------------------------------------
+
+Modus:
+    Buttons:
+        1: setzt Winkelformat auf Gradmaß ("degree")
+        2: setzt Winkelformat auf Bogenmaß ("radian")
+
+class Setup:
+    Parameter:
+        angle:
+            Legt fest, ob Winkel in Gradmaß ("degree") oder in Bogenmaß ("radian") angegeben
+            werden.
+            default: "degree"
+
+    Methoden
+        Setup.setAngleToDegree()
+        Setup.setAngleToRadian()
