@@ -43,7 +43,7 @@ ID: id  value   type        Beschreibung
     13  "b"     "variable"  Programmierbare Variable
     14  "c"     "variable"  Programmierbare Variable
     15  "d"     "variable"  Programmierbare Variable
-    16
+    16  "x"     "variable"  Programmierbare Variable
     17
     18  "("     "symbol"    Klammer auf
     19  ")"     "symbol"    Klammer zu
@@ -96,6 +96,14 @@ Modes
 
 Alle Modi sind unter [ReferenceToCalculator].modes als Dictionary gespeichert. Sie werden
 in der Methode _createModes der Klasse Calculator erstellt. 
+
+Modeselection:
+    Mit der Taste "Mode" kommt man in die Modeselection. Über die Zahlentasten kann Ergebnis
+    Modus ausgewählt werden:
+        1: computation
+        2: table
+        3: differentiation
+        4: equation
 
 
 
