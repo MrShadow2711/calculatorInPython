@@ -64,7 +64,7 @@ class Calculator:
         arr.append(Button(self,13,"b","variable"))
         arr.append(Button(self,14,"c","variable"))
         arr.append(Button(self,15,"d","variable"))
-        arr.append(Button(self,16))
+        arr.append(Button(self,16,"x","variable"))
         arr.append(Button(self,17))
         arr.append(Button(self,18,"(","symbol"))
         arr.append(Button(self,19,")","symbol"))
