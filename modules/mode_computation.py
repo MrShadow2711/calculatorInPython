@@ -32,3 +32,36 @@ class Mode_Computation(Mode):
             return
         
         Input.add(button.value)
+
+    
+    def solve(self):
+        operatorliste = ["+", "-", "*", "/"]
+        Speicher = []
+        i=0
+        while i < len(self.calculator.inputstring):
+            if self.calculator.inputstring[i] in operatorliste:
+                x=i
+                a = int(''.join(Speicher))
+                print(a)
+                Speicher=[]
+                i+=1
+            else:
+                Speicher.append(self.calculator.inputstring[i])
+                i+=1
+        b = int(''.join(Speicher))
+        if self.calculator.inputstring[x] == "+":
+            print(a+b)
+        elif self.calculator.inputstring[x] == "-":
+            print(a-b)
+        elif self.calculator.inputstring[x] == "*":
+            print(a*b)
+        elif self.calculator.inputstring[x] == "/":
+            print(a/b)
+
+
+
+
+
+        
+
+        
