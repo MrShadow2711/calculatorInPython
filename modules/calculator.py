@@ -15,6 +15,7 @@ class Calculator:
         self.buttons:list = self._createButtons()
         self.modes:dict = self._createModes()
         self.activeMode:Mode = self.modes["computation"]
+        self.previousMode:Mode = self.modes["computation"]
         Input.calculator = self
 
     def buttonPressed(self,button:Button):
@@ -38,7 +39,11 @@ class Calculator:
         print("Fehler: Modus konnte nicht bestimmt werden")
 
     def setModeTo(self, mode:str):
+        self.previousMode = self.activeMode
         self.activeMode = self.modes[mode]
+    
+    def revertMode(self):
+        self.activeMode = self.previousMode
 
     def _createButtons(self):
         arr = []
