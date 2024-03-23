@@ -51,25 +51,19 @@ class Mode_Computation(Mode):
     def Convert(self, inputstring, operatorlist, long_operatorlist):
         # long_operatorlist_initial = self.initial(long_operatorlist)
         # print(long_operatorlist_initial)
-        long_operatorlist_slices = self.slicer(long_operatorlist)
+        long_operatorlist_slices = ["x"] #self.slicer(long_operatorlist)
         Solve_list = []
         memory = []
         Test = True
-        for element in inputstring:
-            if element in operatorlist:
+        i = 0
+        while i < len(inputstring)-1:
+            if inputstring[i] in operatorlist and inputstring[i+1] != "r" or inputstring[i+1] != "n":
                 Solve_list.append(''.join(memory))
                 memory = []
-                Solve_list.append(element)
-            # elif element in long_operatorlist_initial:
-            #     continue
-            elif element in long_operatorlist_slices:
-                if Test:
-                    Solve_list.append(''.join(memory))
-                    memory = []
-                    Test=False
-                else:
-                    Test=False
-                memory.append(element)
+                Solve_list.append(inputstring[i])
+            elif Test == False:
+                print(Test)
+                
             else:
                 try:
                     if memory[0] in long_operatorlist_slices:
@@ -80,7 +74,15 @@ class Mode_Computation(Mode):
                         Test=True
                 except:
                     Test=True
-                memory.append(element)
+                memory.append(inputstring[i])
+
+            i+=1
+        if inputstring[-1] in operatorlist:
+            Solve_list.append(''.join(memory))
+            Solve_list.append(inputstring[-1])
+        else:
+            memory.append(inputstring[-1])
+
         Solve_list.append(''.join(memory))
         while '' in Solve_list:
             Solve_list.remove('')
@@ -89,7 +91,7 @@ class Mode_Computation(Mode):
 
 
     def solve(self):
-        operatorlist = ["+", "-", "*", "/", ")"]
+        operatorlist = ["+", "-", "*", "/", "(", ")", "^", "π", "e", "a", "b", "c", "d", "!"]
         long_operatorlist = ["sin(", "arcsin(", "cos(", "arccos(", "tan(", "arctan("]
         Solve_list = self.Convert(self.calculator.inputstring, operatorlist, long_operatorlist)
         print(Solve_list)
