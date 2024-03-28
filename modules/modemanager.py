@@ -9,7 +9,7 @@ from mode_setup import *
 class ModeManager:
     def __init__(self,calculator_reference):
         self.calculator = calculator_reference
-        
+
         self.modes:dict = self._createModes()
         self.activeMode:Mode = self.modes["computation"]
         self.previousMode:Mode = self.modes["computation"]
@@ -34,10 +34,10 @@ class ModeManager:
 
     def _createModes(self):
         return {
-            "computation": Mode_Computation(self),
-            "differentiation": Mode_Differentiation(self),
-            "equation": Mode_Equation(self),
-            "table": Mode_Table(self),
-            "modeselect": Mode_ModeSelect(self),
-            "setup": Mode_Setup(self)
+            "computation": Mode_Computation(self.calculator),
+            "differentiation": Mode_Differentiation(self.calculator),
+            "equation": Mode_Equation(self.calculator),
+            "table": Mode_Table(self.calculator),
+            "modeselect": Mode_ModeSelect(self.calculator),
+            "setup": Mode_Setup(self.calculator)
         }
