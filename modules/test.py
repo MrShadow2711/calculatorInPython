@@ -1,25 +1,34 @@
 from calculator import *
 import random
 
+def allTests(calculator:Calculator):
+    modeselection(calculator)
+    print("---------------")
+
+    setup(calculator)
+    print("---------------")
+    
+    print(table(calculator))
+
 def modeselection(calculator:Calculator):
     def test1():
         calculator.numpad.buttons[50].onClick()
-        if not isinstance(calculator.activeMode, Mode_ModeSelect): return "failed"
+        if not isinstance(calculator.modemanager.activeMode, Mode_ModeSelect): return "failed"
 
         calculator.numpad.buttons[1].onClick()
-        if not isinstance(calculator.activeMode, Mode_Computation): return "failed"
+        if not isinstance(calculator.modemanager.activeMode, Mode_Computation): return "failed"
         
         calculator.numpad.buttons[50].onClick()
         calculator.numpad.buttons[2].onClick()
-        if not isinstance(calculator.activeMode, Mode_Table): return "failed"
+        if not isinstance(calculator.modemanager.activeMode, Mode_Table): return "failed"
         
         calculator.numpad.buttons[50].onClick()
         calculator.numpad.buttons[3].onClick()
-        if not isinstance(calculator.activeMode, Mode_Differentiation): return "failed"
+        if not isinstance(calculator.modemanager.activeMode, Mode_Differentiation): return "failed"
         
         calculator.numpad.buttons[50].onClick()
         calculator.numpad.buttons[4].onClick()
-        if not isinstance(calculator.activeMode, Mode_Equation): return "failed"
+        if not isinstance(calculator.modemanager.activeMode, Mode_Equation): return "failed"
 
         return "passed"
     
@@ -56,9 +65,9 @@ def setup(calculator:Calculator):
     def testButtons():
         #Test 1
         calculator.numpad.buttons[51].onClick()
-        if not isinstance(calculator.activeMode, Mode_Setup): return "failed test 1"
+        if not isinstance(calculator.modemanager.activeMode, Mode_Setup): return "failed test 1"
         calculator.numpad.buttons[51].onClick()
-        if calculator.activeMode != calculator.previousMode: return "failed test 1"
+        if calculator.modemanager.activeMode != calculator.modemanager.previousMode: return "failed test 1"
 
         #Test 2
         for i in range(100):
@@ -67,7 +76,7 @@ def setup(calculator:Calculator):
             calculator.numpad.buttons[51].onClick()
             calculator.numpad.buttons[rand].onClick()
 
-            if calculator.activeMode != calculator.previousMode: return "failed test 2"
+            if calculator.modemanager.activeMode != calculator.modemanager.previousMode: return "failed test 2"
             if rand == 1 and Setup.angle != "degree": return "failed test 2"
             if rand == 2 and Setup.angle != "radian": return "failed test 2"
         
@@ -80,5 +89,5 @@ def table(calculator:Calculator):
     calculator.numpad.buttons[50].onClick()
     calculator.numpad.buttons[2].onClick()
 
-    if not isinstance(calculator.activeMode, Mode_Table): return "test failed"
+    if not isinstance(calculator.modemanager.activeMode, Mode_Table): return "test failed"
     return "passed"

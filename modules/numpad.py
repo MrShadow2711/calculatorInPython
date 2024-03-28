@@ -3,14 +3,15 @@ from button import Button
 class Numpad:
     def __init__(self,calculator_reference):
         self.calculator = calculator_reference
+        self.modemanager = self.calculator.modemanager
         self.buttons:list = self._createButtons()
 
     def buttonPressed(self,button:Button):
         #print("button pressed")
         if button.type == "modsel":
-            self.calculator.setMode(button)
+            self.modemanager.setMode(button)
         else:
-            self.calculator.activeMode.input(button)
+            self.modemanager.activeMode.input(button)
         
         self.calculator.update()
 
