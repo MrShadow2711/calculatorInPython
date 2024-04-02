@@ -26,7 +26,7 @@ Parameter:
 
 myButton = Button(calculator reference, id, value, type)
 
-ID: id  value   type        Beschreibung
+ID: id  value   type        Beschreibung                    Short-Form
     0   "0"     "number"    Zahl 0
     1   "1"     "number"    Zahl 1
     2   "2"     "number"    Zahl 2
@@ -48,23 +48,23 @@ ID: id  value   type        Beschreibung
     18  "("     "symbol"    Klammer auf
     19  ")"     "symbol"    Klammer zu
     20  "^"     "operator"  Potenz
-    21  "log"   "operator"  Logarythmus
-    22  "sqrt"  "operator"  Quadratwurzel
-    23  "root"  "operator"  Wurzel
-    24  "!"     "operator"  Fakultät
-    25  "sin"   "operator"  Sinus
-    26  "arcsin""operator"  Arcussinus
-    27  "cos"   "operator"  Cosinus
-    28  "arccos""operator"  Arkuskosinus
-    29  "tan"   "operator"  Tangens
-    30  "arctan""operator"  Arkustangens
+    21  "log"   "operator"  Logarythmus                     f
+    22  "sqrt"  "operator"  Quadratwurzel                   g
+    23  "root"  "operator"  Wurzel                          h
+    24  "!"     "operator"  Fakultät                        
+    25  "sin"   "operator"  Sinus                           i
+    26  "arcsin""operator"  Arcussinus                      j
+    27  "cos"   "operator"  Cosinus                         k
+    28  "arccos""operator"  Arkuskosinus                    l
+    29  "tan"   "operator"  Tangens                         m
+    30  "arctan""operator"  Arkustangens                    n
     31
     32
     33
     34
     35
     36  "."     "decimal"   Dezimalpunkt
-    37  "ans"   "answer"    Vorheriges Ergebnis
+    37  "ans"   "answer"    Vorheriges Ergebnis             o
     38  "+"     "operator"  Plus
     39  "-"     "operator"  Minus
     40  "*"     "operator"  Mal
